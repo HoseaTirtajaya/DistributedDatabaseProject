@@ -1,9 +1,9 @@
-.carousel-item {
+.carousel-inner .carousel-item{
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel-inner .carousel-item img{
+  width: 100%;
   height: 100vh;
-  min-height: 350px;
-  background: no-repeat center center scroll;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
 }
