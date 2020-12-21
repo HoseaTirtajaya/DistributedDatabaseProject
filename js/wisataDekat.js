@@ -53,11 +53,13 @@ function getLocation() {
 }
 
 function showPosition(position) {
+  document.getElementById("locate-me").addEventListener("click", () => {
+    location.reload();
+  });
   currentLat = position.coords.latitude;
   currentLng = position.coords.longitude;
   initMap();
   getNearbyAttractions();
-
 }
 
 const init = function () {
