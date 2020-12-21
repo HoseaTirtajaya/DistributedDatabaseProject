@@ -39,8 +39,7 @@ function getNearbyAttractions() {
         let text = document.createTextNode(data[i]);
         li.innerHTML = li.innerHTML + data[i].name;
       }
-    }
-  });
+    });
 }
 
 function getLocation() {
