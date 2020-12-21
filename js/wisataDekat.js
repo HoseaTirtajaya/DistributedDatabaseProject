@@ -33,9 +33,6 @@ function getNearbyAttractions() {
   service.nearbySearch(request, (data) => {
     console.log(data);
     for(let i = 0; i < data.length; i++){
-      if(i == 0 || i == 19){
-        continue;
-      } else {
         let li = document.createElement("li");
         li.setAttribute('class','item');
         ol.appendChild(li);
