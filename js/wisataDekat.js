@@ -24,7 +24,7 @@ function getNearbyAttractions() {
     radius: 10000,
     rankby: google.maps.places.RankBy.DISTANCE,
     opennow: true,
-    type: ['landmark', 'town_square', 'locality']
+    types: ['restaurant', 'zoo', 'lodging', 'amusement_park', 'department_store']
   };
   let ol = document.getElementById("list-places");
   
@@ -35,15 +35,11 @@ function getNearbyAttractions() {
   service.nearbySearch(request, (data) => {
     console.log(data);
     for(let i = 0; i < data.length; i++){
-      if(i ==  0 || i == 19){
-        continue
-      } else {
         let li = document.createElement("li");
         li.setAttribute('class','item');
         ol.appendChild(li);
         let text = document.createTextNode(data[i]);
         li.innerHTML = li.innerHTML + data[i].name;
-      }
       }
     });
 }
