@@ -6,15 +6,15 @@
     <title>Pesona Indonesiaku</title>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
-<body>
+<body class="login">
 
     <!-- A grey horizontal navbar that becomes vertical on small screens -->
     <nav class="navbar navbar-expand-md bg-success navbar-dark">
         <!-- Brand -->
-        <a class="navbar-brand" href="index.html">
-            <img src="./assets/71-718556_wonderful-indonesia-logo-logo-pesona-indonesia-png-removebg-preview.png"  width="30" height="24" class="d-inline-block align-top">
+        <a class="navbar-brand" href="../index.html">
+            <img src="../assets/71-718556_wonderful-indonesia-logo-logo-pesona-indonesia-png-removebg-preview.png"  width="30" height="24" class="d-inline-block align-top">
             Pesona Indonesiaku
         </a>
 
@@ -41,65 +41,46 @@
                 <div class="collapse navbar-collapse" id="collapsibleNavbar" style="flex-direction: row-reverse;">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="./html/register.html"><i class="fas fa-user"></i> Daftar</a>
+                            <a class="nav-link" href="./register.html"><i class="fas fa-user"></i> Daftar</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">|</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./html/login.html"><i class="fas fa-sign-in-alt"></i> Masuk</a>
+                            <a class="nav-link" href="./login.html"><i class="fas fa-sign-in-alt"></i> Masuk</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </div>
-    </nav> 
-    
-    <header>
-        <div id="demo" class="carousel slide" data-ride="carousel">
+    </nav>
 
-            <!-- Indicators -->
-            <ul class="carousel-indicators">
-              <li data-target="#demo" data-slide-to="0" class="active"></li>
-              <li data-target="#demo" data-slide-to="1"></li>
-              <li data-target="#demo" data-slide-to="2"></li>
-            </ul>
-          
-            <!-- The slideshow -->
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img src="./assets/landing-img1.jpg" alt="Los Angeles">
-                <div class="carousel-caption">
-                    <h3>Los Angeles</h3>
-                    <p>We had such a great time in LA!</p>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <img src="./assets/landing-img2.jpg" alt="Chicago">
-                <div class="carousel-caption">
-                    <h3>Los Angeles</h3>
-                    <p>We had such a great time in LA!</p>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <img src="./assets/landing-img3.jpg" alt="New York">
-                <div class="carousel-caption">
-                    <h3 class="carousel-title">Los Angeles</h3>
-                    <p>We had such a great time in LA!</p>
-                </div>
-              </div>
-            </div>
-          
-            <!-- Left and right controls -->
-            <a class="carousel-control-prev" href="#demo" data-slide="prev">
-              <span class="carousel-control-prev-icon"></span>
-            </a>
-            <a class="carousel-control-next" href="#demo" data-slide="next">
-              <span class="carousel-control-next-icon"></span>
-            </a>
-          
+    <div class="container">
+        <div class="row header-sign-in">
+            <div class="col-md-12 header-title">Pesona Indonesiaku</div>
         </div>
-    </header>
+        <div class="row">
+            <div class="col-md-6 offset-md-3 form-sign-in">
+                <div class="row">
+                    <div class="col-md-12">
+                        <p class="title-form">Masuk</p>
+                        <form>
+                            <div class="form-group content-sign-in">
+                                <label class="title-input-type-primary-tiketsaya" for="exampleInputEmail1">E-mail</label>
+                                <input type="text" class="form-control input-type-primary-tiketsaya
+                                " id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="E-mail">
+                            </div>
+                            <div class="form-group">
+                                <label class="title-input-type-primary-tiketsaya" for="exampleInputPassword1">Kata Sandi</label>
+                                <input type="password" class="form-control input-type-primary-tiketsaya" id="exampleInputPassword1" placeholder="Kata Sandi">
+                            </div>
+                            <a href="../index.html" class="btn btn-success btn-primary-tiketsaya">Masuk</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
