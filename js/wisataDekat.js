@@ -21,10 +21,10 @@ function initMap() {
 function getNearbyAttractions() {
   const request = {
     location: new google.maps.LatLng(currentLat, currentLng),
-    radius: 10000,
+    radius: 50000,
     rankby: google.maps.places.RankBy.DISTANCE,
     opennow: true,
-    types: ['restaurant', 'zoo', 'lodging', 'amusement_park', 'department_store']
+    types: ['restaurant', 'zoo', 'lodging', 'amusement_park', 'department_store', 'night_club', 'bar']
   };
   let ol = document.getElementById("list-places");
   
