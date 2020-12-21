@@ -31,6 +31,7 @@ function getNearbyAttractions() {
   const service = new google.maps.places.PlacesService(places);
   
   service.nearbySearch(request, (data) => {
+    console.log(data);
     for(let i = 0; i < data.length; i++){
       if(i == 0 || i == 19){
         continue;
