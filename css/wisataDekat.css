@@ -1,7 +1,84 @@
-/* Set the size of the div element that contains the map */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap');
+
+.carousel-inner .carousel-item img{
+    width: 100%;
+    height: 100vh;
+}
+.navbar-dark .navbar-nav .nav-link {
+    color: #ffffff;
+    font-size: 18px;
+}
+.navbar-dark .navbar-nav .nav-link:focus, .navbar-dark .navbar-nav .nav-link:hover, .navbar-dark .navbar-nav .active > .nav-link, .navbar-dark .navbar-nav .nav-link.active {
+    color: #fdf910;
+}
+
+/* login */
+.login {
+    background: #f6f7fb;
+}
+.header-sign-in {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.header-sign-in .header-title {
+    text-align: center;
+    font-family: 'Montserrat';
+    font-size: 30px;
+}
+.form-sign-in {
+    padding: 50px 30px 50px 30px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(246, 247, 251, 1) 100%);
+    overflow: hidden;
+    border-radius: 8px;
+}
+.form-sign-in .title-form {
+    font-size: 20px;
+    font-family: 'Montserrat';
+    font-weight: 500;
+    color: #21272c;
+    margin: 0px;
+}
+.form-sign-in .content-sign-in {
+    margin-top: 30px;
+}
+.title-input-type-primary-tiketsaya {
+    font-family: 'Montserrat';
+    font-size: 16px;
+    font-weight: 300;
+    color: #21272c;
+}
+.input-type-primary-tiketsaya {
+    background: #fafafa;
+    border: 1px solid #ededed;
+    color: #21272c;
+    font-family: 'Montserrat';
+    font-size: 16px;
+    font-weight: 400;
+    color: #21272c;
+    margin-bottom: 30px;
+}
+.input-type-primary-tiketsaya:focus {
+    background: #d0d7ff;
+    border: 1px solid #28a745;
+    color: #21272c;
+}
+.btn-primary-tiketsaya {
+    background: #28a745;
+    border: 0;
+    width: 120px;
+    height: 35px;
+    font-family: 'Montserrat';
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    margin-top: 20px;
+    -webkit-box-shadow: 0px, 3px, 9px, 0px rgba(32, 61, 209, 0.21);
+    -moz-box-shadow: 0px, 3px, 9px, 0px rgba(32, 61, 209, 0.21);
+    box-shadow: 0px, 3px, 9px, 0px rgba(32, 61, 209, 0.21);
+}
 
 #section2{
-    margin-top: 64px;
+    margin-top: 16px;
 }
 
 #map {
