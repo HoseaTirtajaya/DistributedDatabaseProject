@@ -6,6 +6,12 @@
     <title>Pesona Indonesiaku</title>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCH6xXf8d9SpQ-bO-IYmARYC89dpMqJ69w&callback=initMap&libraries=places&v=weekly"
+        async defer></script>
+    <script src="https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyCH6xXf8d9SpQ-bO-IYmARYC89dpMqJ69w"></script>
+    <script
+        src="https://maps.googleapis.com/maps/api/place/textsearch/json?query=new+york+city+point+of+interest&language=en&key=AIzaSyCH6xXf8d9SpQ-bO-IYmARYC89dpMqJ69w"></script>
     <link rel="stylesheet" href="../css/home.css"> 
 </head>
 <body>
@@ -31,14 +37,9 @@
                         <li class="nav-item">
                             <a class="nav-link active" href="../index.html">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./wisataDekat.html">Wisata Terdekatku</a>
-                        </li>
+
                         <li class="nav-item">
                             <a class="nav-link" href="./wisataDekat.html">Wishlist Wisata</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./wisataDekat.html">Top 5 Wisata Tertinggi</a>
                         </li>
                     </ul>
                 </div>
@@ -55,6 +56,34 @@
         </div>
     </nav>
 
+    <div class="row" id="section2">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-10">
+                    <h3>Wisata Terdekatku</h3>
+                </div>
+                <div class="col-md-2">
+                    <button id="locate-me">Locate Me!</button>
+                    <p id="demo"></p>
+                </div>
+            </div>
+            <!--The div element for the map -->
+            <div id="map"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h3>Daftar Wisata Terdekat:</h3>
+            <div id="places"></div>
+        </div>
+        <div class="col-sm-5">
+            <ol id="list-places"></ol>
+        </div>
+    </div>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     
