@@ -24,7 +24,7 @@ function getNearbyAttractions() {
     radius: 50000,
     rankby: google.maps.places.RankBy.DISTANCE,
     opennow: true,
-    types: ['restaurant', 'zoo', 'lodging', 'amusement_park', 'department_store', 'night_club', 'bar']
+    types: ['restaurant', 'zoo', 'lodging', 'amusement_park', 'tourist_attraction']
   };
   let ol = document.getElementById("list-places");
   

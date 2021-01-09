@@ -68,32 +68,40 @@
                             <div class="form-group content-sign-in">
                                 <label class="title-input-type-primary-tiketsaya">Nama Lengkap</label>
                                 <input type="text" class="form-control input-type-primary-tiketsaya
-                                " placeholder="Nama Lengkap">
+                                " placeholder="Nama Lengkap" id="nama_lengkap">
                             </div>
                             <div class="form-group content-sign-in">
                                 <label class="title-input-type-primary-tiketsaya">E-mail</label>
                                 <input type="text" class="form-control input-type-primary-tiketsaya
-                                " placeholder="E-mail">
+                                " placeholder="E-mail" id="email">
                             </div>
                             <div class="form-group content-sign-in">
                                 <label class="title-input-type-primary-tiketsaya">No Handphone</label>
                                 <input type="text" class="form-control input-type-primary-tiketsaya
-                                " placeholder="No Handphone">
+                                " placeholder="No Handphone" id="phone_no">
                             </div>
-                            <div class="form-group content-sign-in">
-                                <label class="title-input-type-primary-tiketsaya">Alamat</label>
-                                <textarea type="text" class="form-control input-type-primary-tiketsaya
-                                " placeholder="Alamat"></textarea>
+                            <div class="form-group" style="margin-bottom: 0px">
+                                <label class="title-input-type-primary-tiketsaya">Gender</label>
                             </div>
-                            <div class="form-group">
+                            <div class="form-check-inline">
+                                <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" name="optradio" id="gender_male" value="male">Male
+                                </label>
+                            </div>
+                            <div class="form-check-inline">
+                                <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" name="optradio" id="gender_female" value="female">Female
+                                </label>
+                            </div>
+                            <div class="form-group" style="margin-top: 24px;">
                                 <label class="title-input-type-primary-tiketsaya" for="exampleInputPassword1">Kata Sandi</label>
-                                <input type="password" class="form-control input-type-primary-tiketsaya" id="exampleInputPassword1" placeholder="Kata Sandi">
+                                <input type="password" class="form-control input-type-primary-tiketsaya" id="exampleInputPassword1" placeholder="Kata Sandi" autocomplete="false">
                             </div>
                             <div class="form-group">
-                                <label class="title-input-type-primary-tiketsaya" for="exampleInputPassword1">Ulangi Kata Sandi</label>
-                                <input type="password" class="form-control input-type-primary-tiketsaya" id="exampleInputPassword1" placeholder="Ulangi Kata Sandi">
+                                <label class="title-input-type-primary-tiketsaya" for="exampleInputPassword2">Ulangi Kata Sandi</label>
+                                <input type="password" class="form-control input-type-primary-tiketsaya" id="exampleInputPassword2" placeholder="Ulangi Kata Sandi" autocomplete="false">
                             </div>
-                            <a href="./homepage.html" class="btn btn-success btn-primary-tiketsaya">Masuk</a>
+                            <a href="#" class="btn btn-success btn-primary-tiketsaya" id="submit_btn">Masuk</a>
                         </form>
                     </div>
                 </div>
@@ -110,8 +118,12 @@
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
+    
     <!-- load icon -->
     <script src="https://kit.fontawesome.com/fffc6c7afc.js"></script>
+    
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
+    <script src="../js/register.js"></script>
 </body>
 </html>
