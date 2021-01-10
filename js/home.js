@@ -62,8 +62,19 @@ function showPosition(position) {
   getNearbyAttractions();
 }
 
+function logoutUser() {
+  let logout_btn = document.getElementById("logout_btn");
+
+  logout_btn.addEventListener("click", () => {
+    console.log("masuk add event listener");
+    localStorage.removeItem("jwttoken");
+    window.location = "../index.html"
+  });
+}
+
 const init = function () {
   getLocation();
+  logoutUser();
 };
 
 init();
