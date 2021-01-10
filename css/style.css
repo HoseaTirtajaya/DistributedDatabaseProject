@@ -76,3 +76,45 @@
     -moz-box-shadow: 0px, 3px, 9px, 0px rgba(32, 61, 209, 0.21);
     box-shadow: 0px, 3px, 9px, 0px rgba(32, 61, 209, 0.21);
 }
+.main-content {
+    width: 1000px;
+    overflow: hidden;
+    margin-left: 50px;
+    margin-top: 50px;
+    float: left;
+}
+.main-content .header .header-title {
+    font-size: 32px;
+    color: #21272c;
+    font-weight: 400;
+    font-family: 'Montserrat';
+    margin: 0px;
+}
+.main-content .report-group .item-big-report {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(246, 247, 251, 1) 100%);
+    border-radius: 8px;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    margin-top: 30px;
+    /* padding-right: 20px;
+    padding-left: 20px; */
+}
+.item-wisata-place {
+    margin-top: 10px;
+    text-align: center;
+    float: left;
+}
+.item-wisata-place img {
+    width: 240px;
+    height: 150px;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+.title-info-wisata-place {
+    font-family: 'Montserrat';
+    font-size: 22px;
+    font-weight: 400;
+    color: #21272c;
+    margin: 0px;
+}
