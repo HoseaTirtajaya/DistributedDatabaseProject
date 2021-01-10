@@ -5,7 +5,7 @@ function loginUser(){
         let email = document.getElementById("exampleInputEmail1").value;
         let password = document.getElementById("exampleInputPassword1").value;
 
-        axios.post("http://localhost:3007/user/login", {
+        axios.post("https://backend-distributed-database.herokuapp.com/user/login", {
             email,
             password,
         }).then(async (user) => {

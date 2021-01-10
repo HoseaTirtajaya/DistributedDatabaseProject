@@ -30,7 +30,7 @@ function registerUser(){
                     }
                 });
             } else {
-                axios.post("http://localhost:3007/user/register", {
+                axios.post("https://backend-distributed-database.herokuapp.com/user/register", {
                     full_name: nama_lengkap,
                     email: email,
                     phone_no: phone_no,
