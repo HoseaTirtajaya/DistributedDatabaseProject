@@ -56,13 +56,19 @@ function initMap() {
     const service = new google.maps.places.PlacesService(map);
     service.getDetails(request, (place, status) => {
         console.log(place);
+        console.log();
         if (status === google.maps.places.PlacesServiceStatus.OK) {
             let nama_tempat = document.getElementById("nama_tempat");
             let alamat_tempat = document.getElementById("alamat_tempat");
+            let no_hp = document.getElementById("no_hp");
+            let website_addr = document.getElementById("website_addr");
             let deskripsi_tempat = document.getElementById("deskripsi_tempat");
 
+            website_addr.setAttribute("href", place.website);
             nama_tempat.innerHTML = place.name;
             alamat_tempat.innerHTML = place.formatted_address;
+            no_hp.innerHTML = place.formatted_phone_number;
+            website_addr.innerHTML = place.website;
         }
     });
 }
