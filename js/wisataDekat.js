@@ -11,6 +11,7 @@ function initMap() {
     zoom: 18,
     center: uluru,
   });
+  
   // The marker, positioned at Uluru
   const marker = new google.maps.Marker({
     position: uluru,
@@ -36,10 +37,13 @@ function getNearbyAttractions() {
     console.log(data);
     for(let i = 0; i < data.length; i++){
         let li = document.createElement("li");
+        let a = document.createElement("a");
+        a.setAttribute("href", `./detailwisata.html?id=${data[i].place_id}`);
         li.setAttribute('class','item');
         ol.appendChild(li);
+        li.appendChild(a);
         let text = document.createTextNode(data[i]);
-        li.innerHTML = li.innerHTML + data[i].name;
+        a.innerHTML = a.innerHTML + data[i].name;
       }
     });
 }

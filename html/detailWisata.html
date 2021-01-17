@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pesona Indonesiaku</title>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/style.css">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Pesona Indonesiaku</title>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../css/style.css">
+        
+        <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCH6xXf8d9SpQ-bO-IYmARYC89dpMqJ69w&libraries=places"></script>
 </head>
 <body class="login">
 
@@ -23,6 +25,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
 
+        <div id="map"></div>
         <!-- Navbar links -->
         <div class="container">
             <div class="col-lg-6">
@@ -73,11 +76,11 @@
 
                         <div class="col-md-4 item-wisata-place">
                             <img src="../assets/landing-img1.jpg" alt="">
-                            <p class="title-info-wisata-place">Monas</p>
-                            <p class="subtitle-info-wisata-place">Jakarta, Indonesia</p>
+                            <p class="title-info-wisata-place" id="nama_tempat">Monas</p>
+                            <p class="subtitle-info-wisata-place" id="alamat_tempat">Jakarta, Indonesia</p>
                         </div>
                         <div class="col-md-8">
-                            <p class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, commodi! Nobis saepe illo labore illum? Minima voluptatibus magni eveniet laboriosam nisi esse numquam quaerat, consequuntur suscipit ea nobis, laudantium quasi?
+                            <p class="" id="deskripsi_tempat">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, commodi! Nobis saepe illo labore illum? Minima voluptatibus magni eveniet laboriosam nisi esse numquam quaerat, consequuntur suscipit ea nobis, laudantium quasi?
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, commodi! Nobis saepe illo labore illum? Minima voluptatibus magni eveniet laboriosam nisi esse numquam quaerat, consequuntur suscipit ea nobis, laudantium quasi?
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, commodi! Nobis saepe illo labore illum? Minima voluptatibus magni eveniet laboriosam nisi esse numquam quaerat, consequuntur suscipit ea nobis, laudantium quasi?
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, commodi! Nobis saepe illo labore illum? Minima voluptatibus magni eveniet laboriosam nisi esse numquam quaerat, consequuntur suscipit ea nobis, laudantium quasi?
@@ -110,8 +113,9 @@
     <script src="https://kit.fontawesome.com/fffc6c7afc.js"></script>
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
     
-    <script src="../js/login.js"></script>
+    <script src="../js/detailWisata.js"></script>
 
 </body>
 </html>
