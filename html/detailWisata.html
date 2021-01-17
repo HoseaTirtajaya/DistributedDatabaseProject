@@ -15,7 +15,7 @@
     <!-- A grey horizontal navbar that becomes vertical on small screens -->
     <nav class="navbar navbar-expand-md bg-success navbar-dark">
         <!-- Brand -->
-        <a class="navbar-brand" href="../index.html">
+        <a class="navbar-brand" href="./homepage.html">
             <img src="../assets/71-718556_wonderful-indonesia-logo-logo-pesona-indonesia-png-removebg-preview.png"  width="30" height="24" class="d-inline-block align-top">
             Pesona Indonesiaku
         </a>
@@ -32,10 +32,10 @@
                 <div class="collapse navbar-collapse" id="collapsibleNavbar">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="../index.html">Home</a>
+                            <a class="nav-link" href="./homepage.html">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./wisataDekat.html">Wisata Terdekatku</a>
+                            <a class="nav-link" href="./whislistWisata.html">Wishlist Wisata</a>
                         </li>
                     </ul>
                 </div>
@@ -44,13 +44,7 @@
                 <div class="collapse navbar-collapse" id="collapsibleNavbar" style="flex-direction: row-reverse;">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="./register.html"><i class="fas fa-user"></i> Daftar</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">|</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./login.html"><i class="fas fa-sign-in-alt"></i> Masuk</a>
+                            <a class="nav-link" href="./register.html"><i class="fas fa-user"></i> Logout</a>
                         </li>
                     </ul>
                 </div>
@@ -58,39 +52,66 @@
         </div>
     </nav>
 
-    <div class="main-content">
+    <div class="main-content col-md-8">
         <div class="row header">
             <div class="col-md-12">
                 <p class="header-title">
-                    Detail Wisata
+                    Details Wisata
                 </p>
             </div>
         </div>
-
         <div class="row report-group">
             
             <div class="col-md-12">
                 <div class="col-md-12 item-big-report">
-
                     <div class="row user-wisata-places">
 
-                        <div class="col-md-4 item-wisata-place">
+                        <div class="col-md-6 item-wisata-place">
                             <p class="title-info-wisata-place" id="nama_tempat"></p>
                             <p class="subtitle-info-wisata-place" id="alamat_tempat"></p>
                             <p class="subtitle-info-wisata-place" id="no_hp"></p>
                             <a class="subtitle-info-wisata-place" id="website_addr"></a>
                         </div>
-                        <div class="col-md-8">
-                            <p class="" id="deskripsi_tempat">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, commodi! Nobis saepe illo labore illum? Minima voluptatibus magni eveniet laboriosam nisi esse numquam quaerat, consequuntur suscipit ea nobis, laudantium quasi?
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, commodi! Nobis saepe illo labore illum? Minima voluptatibus magni eveniet laboriosam nisi esse numquam quaerat, consequuntur suscipit ea nobis, laudantium quasi?
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, commodi! Nobis saepe illo labore illum? Minima voluptatibus magni eveniet laboriosam nisi esse numquam quaerat, consequuntur suscipit ea nobis, laudantium quasi?
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, commodi! Nobis saepe illo labore illum? Minima voluptatibus magni eveniet laboriosam nisi esse numquam quaerat, consequuntur suscipit ea nobis, laudantium quasi?
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, commodi! Nobis saepe illo labore illum? Minima voluptatibus magni eveniet laboriosam nisi esse numquam quaerat, consequuntur suscipit ea nobis, laudantium quasi?
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, commodi! Nobis saepe illo labore illum? Minima voluptatibus magni eveniet laboriosam nisi esse numquam quaerat, consequuntur suscipit ea nobis, laudantium quasi?
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, commodi! Nobis saepe illo labore illum? Minima voluptatibus magni eveniet laboriosam nisi esse numquam quaerat, consequuntur suscipit ea nobis, laudantium quasi?
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, commodi! Nobis saepe illo labore illum? Minima voluptatibus magni eveniet laboriosam nisi esse numquam quaerat, consequuntur suscipit ea nobis, laudantium quasi?
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, commodi! Nobis saepe illo labore illum? Minima voluptatibus magni eveniet laboriosam nisi esse numquam quaerat, consequuntur suscipit ea nobis, laudantium quasi?
-                            </p>
+                        <div class="col-md-6">
+                            <ul class="text-center">
+                                <li class="star"><i class="fas fa-star"></i></li>
+                                <li class="star"><i class="fas fa-star"></i></li>
+                                <li class="star"><i class="fas fa-star"></i></li>
+                                <li class="star"><i class="fas fa-star"></i></li>
+                                <li class="star"><i class="fas fa-star"></i></li>
+                            </ul>
+                            <div class="rating text-center">Rated</div>
+                            <div class="col-md-12">
+                                <div class="wrap-user-picture-circle">
+                                    <img class="primary-user-picture-circle" src="../assets/landing-img1.jpg" alt="">
+                                </div>
+                                <div class="user-info">
+                                    <p class="user-title">
+                                        Ichi<br>
+                                        <span class="user-subtitle">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore numquam repellendus deserunt voluptatum reprehenderit libero, velit exercitationem autem earum itaque?</span>
+                                    </p>
+                                </div>
+
+                                <div class="wrap-user-picture-circle">
+                                    <img class="primary-user-picture-circle" src="../assets/landing-img1.jpg" alt="">
+                                </div>
+                                <div class="user-info">
+                                    <p class="user-title">
+                                        Ichi<br>
+                                        <span class="user-subtitle">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore numquam repellendus deserunt voluptatum reprehenderit libero, velit exercitationem autem earum itaque?</span>
+                                    </p>
+                                </div>
+                                
+                                <div class="wrap-user-picture-circle">
+                                    <img class="primary-user-picture-circle" src="../assets/landing-img1.jpg" alt="">
+                                </div>
+                                <div class="user-info">
+                                    <p class="user-title">
+                                        Ichi<br>
+                                        <span class="user-subtitle">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore numquam repellendus deserunt voluptatum reprehenderit libero, velit exercitationem autem earum itaque?</span>
+                                    </p>
+                                </div>
+                            </div>
                         </div>
 
                     </div>
@@ -115,7 +136,6 @@
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
-    
     <script src="../js/detailWisata.js"></script>
 
 </body>
