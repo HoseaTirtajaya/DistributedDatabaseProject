@@ -1,7 +1,7 @@
 function checkAuthentication() {
     let username = document.getElementById("username");
     if(localStorage.getItem("jwttoken") !== null){
-        axios.get("http://localhost:3007/user/checkauth", {
+        axios.get("https://backend-distributed-database.herokuapp.com/user/checkauth", {
             headers: {
                 jwttoken: localStorage.getItem("jwttoken")
             }
@@ -39,30 +39,59 @@ function initMap() {
 
     const service = new google.maps.places.PlacesService(map);
     service.getDetails(request, (place, status) => {
-        if (status === google.maps.places.PlacesServiceStatus.OK) {
-            let nama_tempat = document.getElementById("nama_tempat");
-            let alamat_tempat = document.getElementById("alamat_tempat");
-            let no_hp = document.getElementById("no_hp");
-            let website_addr = document.getElementById("website_addr");
-            let deskripsi_tempat = document.getElementById("deskripsi_tempat");
+        let link = `https://backend-distributed-database.herokuapp.com/review/details?id=${place_id}`
 
-            if(place.website == undefined){
-                website_addr.setAttribute("href", "#");
-                website_addr.setAttribute("style", "text-decoration: none; color: black;");
-                nama_tempat.innerHTML = place.name;
-                alamat_tempat.innerHTML = place.formatted_address;
-                no_hp.innerHTML = place.formatted_phone_number;
-                website_addr.innerHTML = "No Website Available."
-            } else {
-                website_addr.setAttribute("href", place.website);
-                website_addr.setAttribute("style", "text-decoration: none; color: black;");
-                website_addr.setAttribute("target", "_blank");
-                nama_tempat.innerHTML = place.name;
-                alamat_tempat.innerHTML = place.formatted_address;
-                no_hp.innerHTML = place.formatted_phone_number;
-                website_addr.innerHTML = place.website;
-            }
+        axios.get(link, {
+        headers: {
+            jwttoken: localStorage.getItem("jwttoken"),
         }
+        }).then((reviews) => {
+            let review_data = reviews.data.reviews;
+            let review_len = reviews.data.reviews.length;
+
+            if(review_len <= 0){
+                let rating_tempat = document.getElementById("rating_tempat");
+
+                rating_tempat.innerHTML = "N/A(Data rating is unavailable)"
+            } else {
+                let rate_data = 0;
+                review_data.map(item => {
+                    rate_data += Number(item.rate);
+                });
+                let final_rate = rate_data / review_len;
+                let fixed_rate = final_rate.toFixed(2);
+                rating_tempat.innerHTML = "Rate: " + fixed_rate;
+            }
+
+            if (status === google.maps.places.PlacesServiceStatus.OK) {
+                let nama_tempat = document.getElementById("nama_tempat");
+                let alamat_tempat = document.getElementById("alamat_tempat");
+                let no_hp = document.getElementById("no_hp");
+                let website_addr = document.getElementById("website_addr");
+                let deskripsi_tempat = document.getElementById("deskripsi_tempat");
+    
+                if(place.website == undefined){
+                    website_addr.setAttribute("href", "#");
+                    website_addr.setAttribute("style", "text-decoration: none; color: black;");
+                    nama_tempat.innerHTML = place.name;
+                    alamat_tempat.innerHTML = place.formatted_address;
+                    no_hp.innerHTML = place.formatted_phone_number;
+                    website_addr.innerHTML = "No Website Available."
+                } else {
+                    website_addr.setAttribute("href", place.website);
+                    website_addr.setAttribute("style", "text-decoration: none; color: black;");
+                    website_addr.setAttribute("target", "_blank");
+                    nama_tempat.innerHTML = place.name;
+                    alamat_tempat.innerHTML = place.formatted_address;
+                    no_hp.innerHTML = place.formatted_phone_number;
+                    website_addr.innerHTML = place.website;
+                }
+            }
+        }).catch(err => {
+            if(err){
+                console.log(err);
+            }
+        });
     });
 }
 
@@ -98,6 +127,7 @@ function reviewPlace() {
                     .then(async (review) => {
                         await review;
                         alert("Your review has been recorded");
+                        location.reload();
                     }).catch(err => {
                         if(err){
                             console.log(err);
