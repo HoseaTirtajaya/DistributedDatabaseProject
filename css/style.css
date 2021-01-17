@@ -83,7 +83,7 @@
     margin-top: 50px;
     float: left;
 }
-.main-content .header .header-title {
+.main-content .header-title {
     font-size: 32px;
     color: #21272c;
     font-weight: 400;
@@ -117,4 +117,53 @@
     font-weight: 400;
     color: #21272c;
     margin: 0px;
+}
+.star {
+	font-size: 30px;
+	color: #cfcfcf;
+	display: inline-block;
+}
+.over {
+	color: #f7c56a;
+}
+.fix {
+	color: #ffa600;
+}
+.rating {
+	margin: 30px 0;
+	font-weight: bold;
+}
+.wrap-user-picture-circle {
+    width: 90px;
+    height: 90px;
+    border-radius: 100%;
+    margin-right: 10px;
+    border: 1px solid #e6e8f0;
+    float: left;
+    margin-top: 0px;
+}
+.primary-user-picture-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+    display: block;
+    margin-right: 10px;
+    object-fit: cover;
+    margin: auto;
+    margin-top: 4px;
+}
+.user-info .user-title {
+    font-size: 18px;
+    color: #21272c;
+    font-weight: bold;
+    font-family: 'Montserrat';
+    padding-top: 10px;
+    margin-left: 12px;
+    margin-top: 12px;
+}
+.user-info .user-subtitle {
+    font-size: 14px;
+    color: #21272c;
+    font-weight: 300;
+    font-family: 'Montserrat';
 }
