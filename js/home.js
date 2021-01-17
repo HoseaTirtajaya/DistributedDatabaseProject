@@ -2,6 +2,29 @@ let currentLat = 0;
 let currentLng = 0;
 
 
+function checkAuthentication() {
+    if(localStorage.getItem("jwttoken") !== null){
+        axios.get("http://localhost:3007/user/checkauth", {
+            headers: {
+                jwttoken: localStorage.getItem("jwttoken")
+            }
+        })
+        .then((user) => {
+            if(user.data.user == null){
+                alert("You need to login first as user.");
+                window.location = "../html/login.html"
+            }
+        }).catch(err => {
+            if(err){
+                console.log(err)
+            }
+        });
+    } else {
+        alert("You need to login first as user.");
+        window.location = "../html/login.html"
+    }
+}
+
 // Initialize and add the map
 function initMap() {
   // The location of Uluru
@@ -36,10 +59,13 @@ function getNearbyAttractions() {
     console.log(data);
     for(let i = 0; i < data.length; i++){
         let li = document.createElement("li");
+        let a = document.createElement("a");
+        a.setAttribute("href", `./detailwisata.html?id=${data[i].place_id}`);
         li.setAttribute('class','item');
         ol.appendChild(li);
+        li.appendChild(a);
         let text = document.createTextNode(data[i]);
-        li.innerHTML = li.innerHTML + data[i].name;
+        a.innerHTML = a.innerHTML + data[i].name;
       }
     });
 }
@@ -73,6 +99,7 @@ function logoutUser() {
 }
 
 const init = function () {
+  checkAuthentication();
   getLocation();
   logoutUser();
 };

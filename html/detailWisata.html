@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pesona Indonesiaku</title>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/style.css">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Pesona Indonesiaku</title>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../css/style.css">
+        
+        <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCH6xXf8d9SpQ-bO-IYmARYC89dpMqJ69w&libraries=places"></script>
 </head>
 <body class="login">
 
@@ -23,6 +25,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
 
+        <div id="map"></div>
         <!-- Navbar links -->
         <div class="container">
             <div class="col-lg-6">
@@ -130,8 +133,9 @@
     <script src="https://kit.fontawesome.com/fffc6c7afc.js"></script>
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
     
-    <script src="../js/login.js"></script>
+    <script src="../js/detailWisata.js"></script>
 
     <script>
 		const stars = document.querySelectorAll(".star");
