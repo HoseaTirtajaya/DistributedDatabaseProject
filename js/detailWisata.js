@@ -39,7 +39,6 @@ function initMap() {
 
     const service = new google.maps.places.PlacesService(map);
     service.getDetails(request, (place, status) => {
-        console.log(place);
         if (status === google.maps.places.PlacesServiceStatus.OK) {
             let nama_tempat = document.getElementById("nama_tempat");
             let alamat_tempat = document.getElementById("alamat_tempat");
@@ -87,7 +86,7 @@ function reviewPlace() {
                 let review_btn = document.getElementById("review_btn");
                 review_btn.addEventListener("click", () => {
                     let review_status = document.getElementById("review_status").value;
-                    let link = `http://localhost:3007/review/create?id=${place_id}`
+                    let link = `https://backend-distributed-database.herokuapp.com/review/create?id=${place_id}`
                     axios.post(link, {
                         rate: starValue,
                         review: review_status
@@ -98,7 +97,6 @@ function reviewPlace() {
                     })
                     .then(async (review) => {
                         await review;
-                        console.log(review);
                         alert("Your review has been recorded");
                     }).catch(err => {
                         if(err){
@@ -133,14 +131,13 @@ function reviewPlace() {
 
 function getReviews() {
     let place_id = location.search.substring(1, location.search.length).split("=")[1];
-    let link = `http://localhost:3007/review/details?id=${place_id}`
+    let link = `https://backend-distributed-database.herokuapp.com/review/details?id=${place_id}`
 
     axios.get(link, {
         headers: {
             jwttoken: localStorage.getItem("jwttoken"),
         }
     }).then(reviews => {
-        console.log(reviews);
         let review_data = reviews.data.reviews;
         let review_length = reviews.data.reviews.length;
         let review_container = document.getElementById("review_container");
@@ -158,11 +155,6 @@ function getReviews() {
             first_p.appendChild(desc_review);
             first_div.appendChild(first_p);
 
-            console.log(first_div, first_p, desc_review);
-            
-           
-
-            
             review_container.appendChild(first_div)
         }
     }).catch(err => {
