@@ -4,13 +4,14 @@ let currentLng = 0;
 
 function checkAuthentication() {
     if(localStorage.getItem("jwttoken") !== null){
-        axios.get("http://localhost:3007/user/checkauth", {
+        axios.get("https://backend-distributed-database.herokuapp.com/user/checkauth", {
             headers: {
                 jwttoken: localStorage.getItem("jwttoken")
             }
         })
         .then((user) => {
             if(user.data.user == null){
+                console.log(user);
                 alert("You need to login first as user.");
                 window.location = "../html/login.html"
             }

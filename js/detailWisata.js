@@ -25,6 +25,31 @@ function checkAuthentication() {
     }
 }
 
+function createWishlist(place){
+    let place_id = location.search.substring(1, location.search.length).split("=")[1];
+    let wishlist_btn = document.getElementById("create_wishlist");
+
+    wishlist_btn.addEventListener("click", async () => {
+        let link = `http://localhost:3010/wishlist/create?id=${place_id}`
+        await axios.post(link, {
+            place_id: place_id,
+            types: place.types,
+            name_place: place.name
+        }, {
+            headers: {
+                jwttoken: localStorage.getItem("jwttoken")
+            }
+        }).then((wishlist) => {
+            console.log(wishlist);
+            alert("Data Wishlist has been added. Open Wishlist Page to Check!");
+        }).catch(err => {
+            if(err){
+                console.log(err);
+            }
+        });
+    });
+}
+
 function initMap() {
     let place_id = location.search.substring(1, location.search.length).split("=")[1];
 
@@ -39,8 +64,9 @@ function initMap() {
 
     const service = new google.maps.places.PlacesService(map);
     service.getDetails(request, (place, status) => {
+        console.log(place);
         let link = `https://backend-distributed-database.herokuapp.com/review/details?id=${place_id}`
-
+        
         axios.get(link, {
         headers: {
             jwttoken: localStorage.getItem("jwttoken"),
@@ -87,6 +113,8 @@ function initMap() {
                     website_addr.innerHTML = place.website;
                 }
             }
+
+            createWishlist(place)
         }).catch(err => {
             if(err){
                 console.log(err);
@@ -193,6 +221,8 @@ function getReviews() {
         }
     });
 }
+
+
 
 const init = function () {
     checkAuthentication();
