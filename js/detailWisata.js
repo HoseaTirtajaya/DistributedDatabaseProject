@@ -30,7 +30,7 @@ function createWishlist(place){
     let wishlist_btn = document.getElementById("create_wishlist");
 
     wishlist_btn.addEventListener("click", async () => {
-        let link = `http://localhost:3010/wishlist/create?id=${place_id}`
+        let link = `https://backend-distributed-database.herokuapp.com/wishlist/create?id=${place_id}`
         await axios.post(link, {
             place_id: place_id,
             types: place.types,

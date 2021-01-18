@@ -48,11 +48,9 @@ function getMyWishlists(){
                 </div>`
         }
 
-        console.log(wishlist_container);
 
         wishlist_length.innerHTML = wishlists_data.length;
 
-        console.log(wishlists_data);
     }).catch(err => {
         if(err){
             console.log(err);
