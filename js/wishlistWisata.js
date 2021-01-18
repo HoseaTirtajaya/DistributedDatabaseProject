@@ -1,5 +1,5 @@
 function checkAuthentication() {
-    let username = document.getElementById("username");
+    let username = document.getElementById("username_profile");
     if(localStorage.getItem("jwttoken") !== null){
         axios.get("https://backend-distributed-database.herokuapp.com/user/checkauth", {
             headers: {
@@ -11,7 +11,7 @@ function checkAuthentication() {
                 alert("You need to login first as user.");
                 window.location = "../html/login.html"
             } else {
-                username_profile.innerHTML = user.data.user.full_name;
+                username.innerHTML = user.data.user.full_name;
             }
         }).catch(err => {
             if(err){
