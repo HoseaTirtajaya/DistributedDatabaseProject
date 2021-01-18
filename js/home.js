@@ -47,7 +47,7 @@ function getNearbyAttractions() {
     radius: 50000,
     rankby: google.maps.places.RankBy.DISTANCE,
     opennow: true,
-    types: ['restaurant', 'zoo', 'lodging', 'amusement_park', 'tourist_attraction']
+    types: ['zoo', 'lodging', 'amusement_park', 'tourist_attraction']
   };
   let ol = document.getElementById("list-places");
   
@@ -60,6 +60,7 @@ function getNearbyAttractions() {
     for(let i = 0; i < data.length; i++){
         let li = document.createElement("li");
         let a = document.createElement("a");
+        a.setAttribute("style", "text-decoration: none;color: black;");
         a.setAttribute("href", `./detailwisata.html?id=${data[i].place_id}`);
         li.setAttribute('class','item');
         ol.appendChild(li);

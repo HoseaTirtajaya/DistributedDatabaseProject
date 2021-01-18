@@ -15,7 +15,7 @@
     <!-- A grey horizontal navbar that becomes vertical on small screens -->
     <nav class="navbar navbar-expand-md bg-success navbar-dark">
         <!-- Brand -->
-        <a class="navbar-brand" href="../index.html">
+        <a class="navbar-brand" href="./homepage.html">
             <img src="../assets/71-718556_wonderful-indonesia-logo-logo-pesona-indonesia-png-removebg-preview.png"  width="30" height="24" class="d-inline-block align-top">
             Pesona Indonesiaku
         </a>
@@ -32,10 +32,10 @@
                 <div class="collapse navbar-collapse" id="collapsibleNavbar">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="../homepage.html">Home</a>
+                            <a class="nav-link" href="./homepage.html">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./whislistWisata.html">Whislist Wisata</a>
+                            <a class="nav-link" href="./whislistWisata.html">Wishlist Wisata</a>
                         </li>
                     </ul>
                 </div>
@@ -58,6 +58,7 @@
                 <p class="header-title">
                     Details Wisata
                 </p>
+                <a class="wishlist" href="./whislistWisata.html">Wishlist</a>
             </div>
         </div>
         <div class="row report-group">
@@ -67,8 +68,11 @@
                     <div class="row user-wisata-places">
 
                         <div class="col-md-6 item-wisata-place">
-                            <p class="title-info-wisata-place">Monas</p>
-                            <p class="subtitle-info-wisata-place">Jakarta, Indonesia</p>
+                            <p class="title-info-wisata-place" id="nama_tempat"></p>
+                            <p class="subtitle-info-wisata-place" id="rating_tempat"></p>
+                            <p class="subtitle-info-wisata-place" id="alamat_tempat"></p>
+                            <p class="subtitle-info-wisata-place" id="no_hp"></p>
+                            <a class="subtitle-info-wisata-place" id="website_addr"></a>
                         </div>
                         <div class="col-md-6">
                             <ul class="text-center">
@@ -79,41 +83,10 @@
                                 <li class="star"><i class="fas fa-star"></i></li>
                             </ul>
                             <div class="rating text-center">Rated</div>
-                            <div class="col-md-12">
-                                <div class="wrap-user-picture-circle">
-                                    <img class="primary-user-picture-circle" src="../assets/landing-img1.jpg" alt="">
-                                </div>
-                                <div class="user-info">
-                                    <p class="user-title">
-                                        Ichi<br>
-                                        <span class="user-subtitle">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore numquam repellendus deserunt voluptatum reprehenderit libero, velit exercitationem autem earum itaque?</span>
-                                    </p>
-                                </div>
-
-                                <div class="wrap-user-picture-circle">
-                                    <img class="primary-user-picture-circle" src="../assets/landing-img1.jpg" alt="">
-                                </div>
-                                <div class="user-info">
-                                    <p class="user-title">
-                                        Ichi<br>
-                                        <span class="user-subtitle">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore numquam repellendus deserunt voluptatum reprehenderit libero, velit exercitationem autem earum itaque?</span>
-                                    </p>
-                                </div>
-                                
-                                <div class="wrap-user-picture-circle">
-                                    <img class="primary-user-picture-circle" src="../assets/landing-img1.jpg" alt="">
-                                </div>
-                                <div class="user-info">
-                                    <p class="user-title">
-                                        Ichi<br>
-                                        <span class="user-subtitle">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore numquam repellendus deserunt voluptatum reprehenderit libero, velit exercitationem autem earum itaque?</span>
-                                    </p>
-                                </div>
+                            <div class="col-md-12" id="review_container">
                             </div>
                         </div>
-
                     </div>
-
                 </div>
             </div>
             
@@ -127,14 +100,12 @@
                     <div class="row user-wisata-places">
                         <div class="col-md-12">
                             <div class="wrap-user-picture-circle">
-                                <img class="primary-user-picture-circle" src="../assets/landing-img1.jpg" alt="">
+                                <img style="margin-bottom: 20px;" class="primary-user-picture-circle" src="../assets/profile.png" alt="">
                             </div>
                             <div class="user-info">
-                                <p class="user-title">
-                                    Ichi<br>
-                                    <input type="text" class="form-control" placeholder="Comment...">
-                                    <a href="#" class="btn btn-success btn-primary-tiketsaya" type="submit" id="login_btn">Submit</a>
-                                </p>
+                                <p class="user-title" id="username"></p>
+                                    <input type="text" class="form-control" placeholder="Comment...(Optional)" id="review_status">
+                                    <a href="#" class="btn btn-success btn-primary-tiketsaya" type="submit" id="review_btn">Submit</a>
                             </div>
                         </div>
                     </div>
@@ -157,49 +128,7 @@
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
-    
     <script src="../js/detailWisata.js"></script>
-
-    <script>
-		const stars = document.querySelectorAll(".star");
-		const rating = document.querySelector(".rating");
-
-		for(let i = 0; i < stars.length; i++) {
-			stars[i].starValue = (i+1);
-			["mouseover", "mouseout", "click"].forEach(function(e) {
-				stars[i].addEventListener(e, starRate);
-			})
-		}
-
-		function starRate(e) {
-			let type = e.type;
-			let starValue = this.starValue;
-			if(type === "click") {
-				if(starValue > 1) {
-					rating.innerHTML = "You rate this " + starValue + " stars";
-				}
-			}
-			stars.forEach(function(ele, ind) {
-				if(type === "click") {
-					if(ind < starValue) {
-						ele.classList.add("fix");
-					} else {
-						ele.classList.remove("fix");
-					}
-				}
-				if(type === "mouseover") {
-					if(ind < starValue) {
-						ele.classList.add("over");
-					} else {
-						ele.classList.remove("over");
-					}
-				}
-				if(type === "mouseout") {
-					ele.classList.remove("over");
-				}
-			});
-		}
-	</script>
 
 </body>
 </html>
