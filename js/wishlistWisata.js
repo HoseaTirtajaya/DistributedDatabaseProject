@@ -35,17 +35,24 @@ function getMyWishlists(){
         let wishlist_container = document.getElementById("wishlist_container");
 
         for(let i=0; i < wishlists_data.length; i++){
-            wishlist_container.innerHTML = ` <div class="cart-item d-md-flex justify-content-between"><span class="remove-item"><i class="fa fa-times"></i></span>
-                <div class="px-3 my-3">
-                    <a class="cart-item-product" href="#">
+            let div_first = document.createElement("div");
 
-                    <div class="cart-item-product-info">
-                        <h4 class="cart-item-product-title">${wishlists_data[i].name_place}</h4>
-                        <div class="text-lg text-body font-weight-medium pb-1"></div><span>Rencana : <span class="${wishlists_data[i].isDone == true ? "text-success" : "text-danger"} font-weight-medium">${wishlists_data[i].isDone == true ? "Sudah Dikunjungi" : "Belum dikunjungi"}</span></span>
+            wishlist_container.innerHTML = ` 
+            <div class="cart-item d-md-flex justify-content-between">
+                <span class="remove-item">
+                <i class="fa fa-times">
+                </i>
+                </span>
+                    <div class="px-3 my-3">
+                        <a class="cart-item-product" href="#">
+
+                            <div class="cart-item-product-info">
+                                <h4 class="cart-item-product-title">${wishlists_data[i].name_place}</h4>
+                                <div class="text-lg text-body font-weight-medium pb-1"></div><span>Rencana : <span class="${wishlists_data[i].isDone == true ? "text-success" : "text-danger"} font-weight-medium">${wishlists_data[i].isDone == true ? "Sudah Dikunjungi" : "Belum dikunjungi"}</span></span>
+                            </div>
+                        </a>
                     </div>
-                    </a>
-                </div>
-                </div>`
+            </div>`
         }
 
 
